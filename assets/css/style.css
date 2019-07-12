@@ -1,9 +1,10 @@
 *{
     box-sizing: border-box;
 }
+/* Starter Page */
 body{
-    background-image: url("../images/sparkles.png");
-    /* background-position: center; */
+    background-image: url("../images/sparkles.png"); 
+    background-position: center;
     background-size: auto;
 }
 h1{
@@ -11,6 +12,7 @@ h1{
     font-family: 'Great Vibes', cursive;
     margin-top: 100px;
     font-size: 65px;
+    text-shadow: 2px 2px lightseagreen;
 }
 #head{
     background-image: url("../images/disney.jpg");
@@ -31,4 +33,42 @@ button{
 }
 p{
     font-family: 'Indie Flower', cursive;
+}
+/* In-Game Main Content */
+h2{
+    font-family: 'Fredericka the Great', cursive;
+}
+.content{
+    background-image: url("../images/white-waves.png");
+}
+#time{
+    font-size: 60px;
+    font-family: 'Fredericka the Great', cursive;
+}
+#question{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.answer{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Game Over */
+#gg{
+    text-shadow: 2px 2px lightseagreen;
+}
+#replay{
+    background-image: url("../images/replay.jpg") !important;
+    background-position: center;
+    background-size: 600px 100px;
+    color: rgba(240, 240, 15, 0.884);
+    font-size: 30px;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 2px 2px black;
+}
+
+/* Media Query */
+@media screen and (min-width: 545.1px)and (max-width: 1100px), (min-width:1100px) {
+    #gameRule{
+        margin-top: 70px;
+    }
 }

@@ -11,10 +11,10 @@
     <!-- CSS Link -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Great+Vibes|Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Fredericka+the+Great|Great+Vibes|Indie+Flower&display=swap" rel="stylesheet">
     <!-- jQuery Library CDN -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>Disney Trivia Game</title>
+    <title>Know Your Disney</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="row mt-5">
                         <div class="col-12 mt-5">
-                            <p class="text-white mt-5 text-center">Select the correct answer to each question before the timer runs out.</p>
+                            <p class="text-white text-center" id="gameRule">Select the correct answer to each question before the timer runs out.</p>
                         </div>
                     </div>
                 </div>
@@ -38,11 +38,61 @@
         </div>
     </header>
 
-    <div class="container" id="main-content">
+    <div class="container content" id="main-content">
         <div class="row mt-5">
-            <div class="col mt-5">
-                <h2 class="text-white">Time Remaining:</h2>
-                <p class="text-white"><span id="time"></span> Seconds</p>
+            <div class="col my-5">
+                <h2 class="text-center">Time Remaining:</h2>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <p class="text-center border" id="time">30</p>
+                    </div>
+                </div>
+                <p class="text-center">Seconds</p>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <p class="text-center" id="question">Questions</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <button type="button" class="btn-lg btn-block answer" id="answer1">Answer1</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <button type="button" class="btn-lg btn-block answer" id="answer2">Answer2</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <button type="button" class="btn-lg btn-block answer" id="answer3">Answer3</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <button type="button" class="btn-lg btn-block answer" id="answer4">Answer4</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <div class="container content" id="gameOver">
+        <div class="row mt-5">
+            <div class="col my-5">
+                <h2 class="text-center" id="gg">GAME OVER!</h2>
+                <div class="row mt-4">
+                    <div class="col-6 offset-3 border">
+                        <p class="mt-2 font-weight-bold">Correct Answers: <span id="correctAns"></span></p>
+                        <p class="font-weight-bold">Incorrect Answers: <span id="incorrectAns"></span></p>
+                        <p class="mb-0 font-weight-bold">Unanswered: <span id="unanswered"></span></p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-6 offset-3 mt-3">
+                        <button type="button" class="btn button btn-lg btn-block" id="replay">REPLAY</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
