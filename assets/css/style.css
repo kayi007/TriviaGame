@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../images/sparkles.png");
+    /* background-position: center; */
+    background-size: auto;
+}
+h1{
+    color: whitesmoke;
+    font-family: 'Great Vibes', cursive;
+    margin-top: 100px;
+    font-size: 65px;
+}
+#head{
+    background-image: url("../images/disney.jpg");
+    /* margin-top: 30px; */
+    height: 600px;
+    background-position: center;
+    background-size: 1500px 900px;
+}
+button:hover{
+    background-color: rgba(153, 205, 50, 0.815) !important;
+}
+button{
+    background-color: rgba(216, 112, 147, 0.815) !important;
+    color: aliceblue;
+    /* margin-top: 300px; */
+    font-size: 30px;
+    font-family: 'Bungee Inline', cursive;
+}
+p{
+    font-family: 'Indie Flower', cursive;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- CSS Link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Great+Vibes|Indie+Flower&display=swap" rel="stylesheet">
+    <!-- jQuery Library CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Disney Trivia Game</title>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12" id="head">
+                    <h1 class="text-center">Disney Trivia Game</h1>
+                    <div class="row mt-5">
+                        <div class="col-6 offset-3 mt-5">
+                            <button type="button" class="btn button text-white btn-lg btn-block border mt-5">Start</button>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 mt-5">
+                            <p class="text-white mt-5 text-center">Select the correct answer to each question before the timer runs out.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="main-content">
+        <div class="row mt-5">
+            <div class="col mt-5">
+                <h2 class="text-white">Time Remaining:</h2>
+                <p class="text-white"><span id="time"></span> Seconds</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
