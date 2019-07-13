@@ -104,7 +104,7 @@ let questionsBank = [
         question:"Who was considered to play the role of Princess Tiana in the The Princess and the Frog?",
         answers:[
             {
-                answer:"Beyonce",
+                answer:"Beyoncé",
                 correct: true,
             },
             {
@@ -152,7 +152,10 @@ window.onload = function() {
     $("#main-content").hide();
     $("#gameOver").hide();
     $("#start").on("click", startGame);
-
+    $("#answer1").on("click", checkAns);
+    $("#answer2").on("click", checkAns);
+    $("#answer3").on("click", checkAns);
+    $("#answer4").on("click", checkAns);
 };
 
 // On-Click Functions
@@ -201,13 +204,15 @@ function setCorrectAns(question){
 }
 
 function checkAns(){
-    let userAns = $(this).correct;
+    console.log(this);
+    stop();
+    let userAns = $(this).text();
     if(userAns === correctAns){
         correct++
         correctMsg();
     }else{
         incorrect++;
-        incorrectMsg();
+        // incorrectMsg();
     }
 }
 
@@ -228,4 +233,21 @@ function questionDisplay(){
         $("#answer4").text(currentQuestion.answers[3].answer);
         setCorrectAns(currentQuestion);
     }
+    // else{
+    //     gameOver();
+    // }
 }
+
+// Result Messages
+function correctMsg(){
+    $(".a-box").hide();
+    $("#question").text("Yay! That's Correct!");
+    $("#answer2").text(correctAns);
+    index++;
+    setTimeout(questionDisplay, 3000);
+}
+
+// Game Over
+// function gameOver(){
+
+// }
