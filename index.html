@@ -18,14 +18,17 @@
 </head>
 
 <body>
+    <audio autoplay>
+        <source src="assets/Disneyland.mp3" type="audio/mpeg">
+    </audio>
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12" id="head">
+                <div class="col-12 mt-4" id="head">
                     <h1 class="text-center">Disney Trivia Game</h1>
                     <div class="row mt-5">
                         <div class="col-6 offset-3 mt-5">
-                            <button type="button" class="btn button text-white btn-lg btn-block border mt-5">Start</button>
+                            <button type="button" class="btn button text-white btn-lg btn-block border mt-5" id="start">Start</button>
                         </div>
                     </div>
                     <div class="row mt-5">
@@ -39,38 +42,38 @@
     </header>
 
     <div class="container content" id="main-content">
-        <div class="row mt-5">
+        <div class="row my-5">
             <div class="col my-5">
                 <h2 class="text-center">Time Remaining:</h2>
                 <div class="row">
-                    <div class="col-4 offset-4">
-                        <p class="text-center border" id="time">30</p>
+                    <div class="col-4 offset-4 border">
+                        <p class="text-center" id="time">30</p>
+                        <p class="text-center">Seconds Left</p>
                     </div>
                 </div>
-                <p class="text-center">Seconds</p>
                 <div class="row">
                     <div class="col-10 offset-1">
-                        <p class="text-center" id="question">Questions</p>
+                        <p class="text-center my-4" id="question">Questions</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4 offset-4">
-                        <button type="button" class="btn-lg btn-block answer" id="answer1">Answer1</button>
+                        <button type="button" class="btn-sm btn-block answer" id="answer1">Answer1</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4 offset-4">
-                        <button type="button" class="btn-lg btn-block answer" id="answer2">Answer2</button>
+                        <button type="button" class="btn-sm btn-block answer" id="answer2">Answer2</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4 offset-4">
-                        <button type="button" class="btn-lg btn-block answer" id="answer3">Answer3</button>
+                        <button type="button" class="btn-sm btn-block answer" id="answer3">Answer3</button>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4 offset-4">
-                        <button type="button" class="btn-lg btn-block answer" id="answer4">Answer4</button>
+                        <button type="button" class="btn-sm btn-block answer" id="answer4">Answer4</button>
                     </div>
                 </div>
             </div>
@@ -96,5 +99,8 @@
             </div>
         </div>
     </div>
+
+     <!-- JavaScript Link -->
+     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>

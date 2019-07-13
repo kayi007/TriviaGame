@@ -47,6 +47,10 @@ h2{
 }
 #question{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: lightseagreen;
+    text-shadow: 1px 1px lightcyan;
 }
 .answer{
     text-align: center;

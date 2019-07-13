@@ -1,3 +1,14 @@
+// List of Variable Declaration
+let timer = 30;
+let correct = 0;
+let incorrect = 0;
+let unanswered = 0;
+let clockRunning = false;
+let correctAns;
+let intervalId;
+let index = 0;
+// Computer Random Generated Number
+// let qaIndex = Math.floor(Math.random() * questionsBank.length);
 // A list of Questions & Answers
 let questionsBank = [
     // 1
@@ -49,8 +60,8 @@ let questionsBank = [
         question:"Who is the youngest Disney villain?",
         answers:[
             {
-                answer:"Frozen: Hans",
-                correct: true,
+                answer:"Mulan: Shan Yu",
+                correct: false,
             },
             {
                 answer:"Beauty and the Beast: Gaston",
@@ -61,8 +72,8 @@ let questionsBank = [
                 correct: false,
             },
             {
-                answer:"Mulan: Shan Yu",
-                correct: false,
+                answer:"Frozen: Hans",
+                correct: true,
             }
         ]
     },
@@ -71,16 +82,16 @@ let questionsBank = [
         question:"Who visited Arendelle from another movie to be guests at Elsa's coronation in Frozen?",
         answers:[
             {
-                answer:"Rapunzel & Flynn",
-                correct: true,
+                answer:"Princess Fiona & Shrek",
+                correct: false,
             },
             {
                 answer:"King Fergus & Queen Elinor",
                 correct: false,
             },
             {
-                answer:"Princess Fiona & Shrek",
-                correct: false,
+                answer:"Rapunzel & Flynn",
+                correct: true,
             },
             {
                 answer:"Kristoff & Hans",
@@ -115,16 +126,16 @@ let questionsBank = [
         question:"What was Walter Elias Disney's (the pioneer of Disney) favorite piece of animation?",
         answers: [
             {
-                answer:"Cinderella's dress transformation",
-                correct: true,
+                answer:"Hercules' rescue Meg from the Underworld",
+                correct: false,
             },
             {
                 answer:"Ariel's tail transformation",
                 correct: false,
             },
             {
-                answer:"Hercules' rescue Meg from the Underworld",
-                correct: false,
+                answer:"Cinderella's dress transformation",
+                correct: true,
             },
             {
                 answer:"Peter Pan's Flying Scene",
@@ -133,5 +144,88 @@ let questionsBank = [
         ]
     }
 ]
+// MAIN PROCESS
+// ==============================================================================
+// This code will run as soon as the page loads
+window.onload = function() {
+    $("header").show();
+    $("#main-content").hide();
+    $("#gameOver").hide();
+    $("#start").on("click", startGame);
 
-// 
+};
+
+// On-Click Functions
+// when start button was clicked, we call the startGame function
+// $("#start").on("click", startGame);
+
+// Start Game
+function startGame() {
+    $("header").hide();
+    $("#gameOver").hide();
+    $("#main-content").show();
+    questionDisplay();
+}
+
+// miscellaneous functions
+// Start count down and set clock to running
+function run(){
+    if(!clockRunning){
+        intervalId = setInterval(decrement, 1000);
+        clockRunning = true;
+    }
+}
+
+function decrement(){
+    timer--;
+    $("#time").text(timer);
+    if(timer === 0){
+        stop();
+        unansweredMsg();
+        unanswered++;
+    }
+}
+
+function stop() {
+    clearInterval(intervalId);
+    clockRunning = false;
+}
+
+function setCorrectAns(question){
+    for(let i = 0; i < question.answers.length; i++){
+        if(question.answers[i].correct === true)
+        {
+            correctAns = question.answers[i].answer;
+        }
+    }
+}
+
+function checkAns(){
+    let userAns = $(this).correct;
+    if(userAns === correctAns){
+        correct++
+        correctMsg();
+    }else{
+        incorrect++;
+        incorrectMsg();
+    }
+}
+
+function questionDisplay(){
+    timer = 30;
+    $("#time").text(timer);
+    run();
+    $("#answer1").show();
+    $("#answer2").show();
+    $("#answer3").show();
+    $("#answer4").show();
+    if(index < questionsBank.length){
+        let currentQuestion = questionsBank[index];
+        $("#question").text(currentQuestion.question);
+        $("#answer1").text(currentQuestion.answers[0].answer);
+        $("#answer2").text(currentQuestion.answers[1].answer);
+        $("#answer3").text(currentQuestion.answers[2].answer);
+        $("#answer4").text(currentQuestion.answers[3].answer);
+        setCorrectAns(currentQuestion);
+    }
+}
