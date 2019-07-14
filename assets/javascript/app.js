@@ -148,7 +148,7 @@ let questionsBank = [
 // ==============================================================================
 // This code will run as soon as the page loads
 window.onload = function() {
-    $("header").show();
+    // $("header").show();
     $("#main-content").hide();
     $("#gameOver").hide();
     $("#start").on("click", startGame);
@@ -212,7 +212,7 @@ function checkAns(){
         correctMsg();
     }else{
         incorrect++;
-        // incorrectMsg();
+        incorrectMsg();
     }
 }
 
@@ -233,21 +233,52 @@ function questionDisplay(){
         $("#answer4").text(currentQuestion.answers[3].answer);
         setCorrectAns(currentQuestion);
     }
-    // else{
-    //     gameOver();
-    // }
+    else{
+        gameOver();
+    }
 }
 
 // Result Messages
 function correctMsg(){
     $(".a-box").hide();
     $("#question").text("Yay! That's Correct!");
+    // $("#answer2").attr("class", "disabled");
     $("#answer2").text(correctAns);
     index++;
     setTimeout(questionDisplay, 3000);
 }
-
+function unansweredMsg(){
+    $(".a-box").hide();
+    $("#question").text("Awww... You Missed it! Here's the correct answer!");
+    // $("#answer2").attr("class", "disabled");
+    $("#answer2").text(correctAns);
+    index++;
+    setTimeout(questionDisplay, 3000);
+}
+function incorrectMsg(){
+    $(".a-box").hide();
+    $("#question").html("Yikes! Wrong Answer! <br /> Correct Answer is: ");
+    // $("#answer2").attr("class", "disabled");
+    $("#answer2").text(correctAns);
+    index++;
+    setTimeout(questionDisplay, 3000);
+}
 // Game Over
-// function gameOver(){
-
-// }
+function gameOver(){
+    stop();
+    // $("header").hide();
+    $("#main-content").hide();
+    $("#gameOver").show();
+    $("#correctAns").text(correct);
+    $("#incorrectAns").text(incorrect);
+    $("#unanswered").text(unanswered);
+    $("#replay").on("click", resetGame);
+}
+function resetGame(){
+    timer = 30;
+    correct = 0;
+    incorrect = 0;
+    unanswered = 0;
+    index = 0;
+    startGame();
+}
