@@ -148,7 +148,6 @@ let questionsBank = [
 // ==============================================================================
 // This code will run as soon as the page loads
 window.onload = function() {
-    // $("header").show();
     $("#main-content").hide();
     $("#gameOver").hide();
     $("#start").on("click", startGame);
@@ -220,6 +219,7 @@ function questionDisplay(){
     timer = 30;
     $("#time").text(timer);
     run();
+    $("#answerDisplay").hide();
     $("#answer1").show();
     $("#answer2").show();
     $("#answer3").show();
@@ -242,31 +242,30 @@ function questionDisplay(){
 function correctMsg(){
     $(".a-box").hide();
     $("#question").text("Yay! That's Correct!");
-    // $("#answer2").attr("class", "disabled");
-    $("#answer2").text(correctAns);
+    $("#answerDisplay").show();
+    $("#answerDisplay").text(correctAns);
     index++;
     setTimeout(questionDisplay, 3000);
 }
 function unansweredMsg(){
     $(".a-box").hide();
     $("#question").text("Awww... You Missed it! Here's the correct answer!");
-    // $("#answer2").attr("class", "disabled");
-    $("#answer2").text(correctAns);
+    $("#answerDisplay").show();
+    $("#answerDisplay").text(correctAns);
     index++;
     setTimeout(questionDisplay, 3000);
 }
 function incorrectMsg(){
     $(".a-box").hide();
     $("#question").html("Yikes! Wrong Answer! <br /> Correct Answer is: ");
-    // $("#answer2").attr("class", "disabled");
-    $("#answer2").text(correctAns);
+    $("#answerDisplay").show();
+    $("#answerDisplay").text(correctAns);
     index++;
     setTimeout(questionDisplay, 3000);
 }
 // Game Over
 function gameOver(){
     stop();
-    // $("header").hide();
     $("#main-content").hide();
     $("#gameOver").show();
     $("#correctAns").text(correct);

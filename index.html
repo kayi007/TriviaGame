@@ -43,8 +43,11 @@
 
     <div class="container content" id="main-content">
         <div class="row my-5">
-            <div class="col my-5">
-                <h2 class="text-center">Time Remaining:</h2>
+            <div class="col mb-5">
+                <div>
+                    <img src="assets/images/disneybug.png" alt="Disney bug with an umbrella" class="fixed"/>
+                </div>
+                <h2 class="text-center mt-5">Time Remaining:</h2>
                 <div class="row">
                     <div class="col-4 offset-4 border" id="time-box">
                         <p class="text-center" id="time">30</p>
@@ -63,7 +66,7 @@
                 </div>
                 <div class="row">
                     <div class="col-4 offset-4">
-                        <button type="button" class="btn-sm btn-block answer" id="answer2">Answer2</button>
+                        <button type="button" class="a-box btn-sm btn-block answer" id="answer2">Answer2</button>
                     </div>
                 </div>
                 <div class="row">
@@ -76,6 +79,11 @@
                         <button type="button" class="a-box btn-sm btn-block answer" id="answer4">Answer4</button>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <button type="button" class="a-box btn-sm btn-block answer" id="answerDisplay">Correct Answer Display</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div> 
@@ -86,20 +94,29 @@
                 <h2 class="text-center" id="gg">GAME OVER!</h2>
                 <div class="row mt-4">
                     <div class="col-6 offset-3 border">
-                        <p class="mt-2 font-weight-bold">Correct Answers: <span id="correctAns"></span></p>
-                        <p class="font-weight-bold">Incorrect Answers: <span id="incorrectAns"></span></p>
-                        <p class="mb-0 font-weight-bold">Unanswered: <span id="unanswered"></span></p>
+                        <p class="mt-2 font-weight-bold text-center">Correct Answers: <span id="correctAns"></span></p>
+                        <p class="font-weight-bold text-center">Incorrect Answers: <span id="incorrectAns"></span></p>
+                        <p class="mb-0 font-weight-bold text-center">Unanswered: <span id="unanswered"></span></p>
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-6 offset-3 mt-3">
-                        <button type="button" class="btn button btn-lg btn-block" id="replay">REPLAY</button>
+                        <button type="button" class="btn button btn-lg btn-block border" id="replay">REPLAY</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <footer>
+        <div class="container-fluid fixed-bottom" id="end">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <p id="lastP">Copyright &copy; Kathleen Leung</p>
+                </div>
+            </div>
+        </div>
+    </footer>
      <!-- JavaScript Link -->
      <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>

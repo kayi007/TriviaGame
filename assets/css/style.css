@@ -16,7 +16,6 @@ h1{
 }
 #head{
     background-image: url("../images/disney.jpg");
-    /* margin-top: 30px; */
     height: 600px;
     background-position: center;
     background-size: 1500px 900px;
@@ -27,12 +26,21 @@ button:hover{
 button{
     background-color: rgba(216, 112, 147, 0.815) !important;
     color: aliceblue;
-    /* margin-top: 300px; */
     font-size: 30px;
     font-family: 'Bungee Inline', cursive;
 }
 p{
     font-family: 'Indie Flower', cursive;
+}
+#main-content{
+    position: relative;
+}
+.fixed{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 200px;
+    height: 200px;
 }
 /* In-Game Main Content */
 h2{
@@ -56,6 +64,10 @@ h2{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+#answerDisplay{
+    background-color: beige !important;
+    color: brown;
+}
 /* Game Over */
 #gg{
     text-shadow: 2px 2px lightseagreen;
@@ -69,7 +81,18 @@ h2{
     font-family: 'Bungee Inline', cursive;
     text-shadow: 2px 2px black;
 }
-
+/* Footer */
+#end{
+    text-align: center;
+    font-size: 12px;
+    background-color: rgba(192, 26, 207, 0.774);
+    padding: 10px;
+    border-top: 5px solid lightcyan;
+}
+#lastP{
+    color: white;
+    margin-bottom: 0;
+}
 /* Media Query */
 @media screen and (min-width: 545.1px)and (max-width: 1100px), (min-width:1100px) {
     #gameRule{
