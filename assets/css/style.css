@@ -81,6 +81,9 @@ h2{
     font-family: 'Bungee Inline', cursive;
     text-shadow: 2px 2px black;
 }
+.ggP{
+    font-size: 20px;
+}
 /* Footer */
 #end{
     text-align: center;

@@ -157,10 +157,6 @@ window.onload = function() {
     $("#answer4").on("click", checkAns);
 };
 
-// On-Click Functions
-// when start button was clicked, we call the startGame function
-// $("#start").on("click", startGame);
-
 // Start Game
 function startGame() {
     $("header").hide();
@@ -247,6 +243,7 @@ function correctMsg(){
     index++;
     setTimeout(questionDisplay, 3000);
 }
+
 function unansweredMsg(){
     $(".a-box").hide();
     $("#question").text("Awww... You Missed it! Here's the correct answer!");
@@ -255,6 +252,7 @@ function unansweredMsg(){
     index++;
     setTimeout(questionDisplay, 3000);
 }
+
 function incorrectMsg(){
     $(".a-box").hide();
     $("#question").html("Yikes! Wrong Answer! <br /> Correct Answer is: ");
@@ -263,6 +261,7 @@ function incorrectMsg(){
     index++;
     setTimeout(questionDisplay, 3000);
 }
+
 // Game Over
 function gameOver(){
     stop();
@@ -273,6 +272,7 @@ function gameOver(){
     $("#unanswered").text(unanswered);
     $("#replay").on("click", resetGame);
 }
+
 function resetGame(){
     timer = 30;
     correct = 0;
