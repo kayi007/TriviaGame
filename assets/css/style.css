@@ -19,6 +19,7 @@ h1{
     height: 600px;
     background-position: center;
     background-size: 1500px 900px;
+    background-repeat: no-repeat;
 }
 button:hover{
     background-color: rgba(153, 205, 50, 0.815) !important;
