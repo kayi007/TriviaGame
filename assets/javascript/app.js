@@ -7,6 +7,7 @@ let clockRunning = false;
 let correctAns;
 let intervalId;
 let index = 0;
+let APIKey = "Ht8WH9eekvUs9LRHgvqvujPAXIqPXuP6";
 // Computer Random Generated Number
 // let qaIndex = Math.floor(Math.random() * questionsBank.length);
 // A list of Questions & Answers
@@ -212,6 +213,7 @@ function checkAns(){
 }
 
 function questionDisplay(){
+    $("#gifDisplay").empty();
     timer = 30;
     $("#time").text(timer);
     run();
@@ -234,12 +236,31 @@ function questionDisplay(){
     }
 }
 
+function displayGIF() {
+    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + correctAns + "&api_key=" + APIKey + "&limit=1";
+    // "https://api.giphy.com/v1/gifs/random?" + "api_key=" + APIKey + "&tag=" + correctAns;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        let giphy = response.data;
+        console.log(response);
+        let imageUrl = giphy[0].images.fixed_height.url;
+        let gifImage = $("<img>");
+        gifImage.attr("src", imageUrl);
+        gifImage.attr("alt", correctAns);
+        $("#gifDisplay").append(gifImage);
+    });
+
+}
+
 // Result Messages
 function correctMsg(){
     $(".a-box").hide();
     $("#question").text("Yay! That's Correct!");
     $("#answerDisplay").show();
     $("#answerDisplay").text(correctAns);
+    displayGIF();
     index++;
     setTimeout(questionDisplay, 3000);
 }
@@ -249,6 +270,7 @@ function unansweredMsg(){
     $("#question").text("Awww... You Missed it! Here's the correct answer!");
     $("#answerDisplay").show();
     $("#answerDisplay").text(correctAns);
+    displayGIF();
     index++;
     setTimeout(questionDisplay, 3000);
 }
@@ -258,6 +280,7 @@ function incorrectMsg(){
     $("#question").html("Yikes! Wrong Answer! <br /> Correct Answer is: ");
     $("#answerDisplay").show();
     $("#answerDisplay").text(correctAns);
+    displayGIF();
     index++;
     setTimeout(questionDisplay, 3000);
 }
